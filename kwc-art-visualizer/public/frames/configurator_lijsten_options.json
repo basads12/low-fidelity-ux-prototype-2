@@ -1,0 +1,20 @@
+[
+  {
+    "id": "lijst_01_zwart_wit",
+    "name": "Zwart + wit/zilver",
+    "description": "Zwarte buitenlijst + witte/zilveren binnenlijst",
+    "thumbnail": "lijst_01_zwart_wit_thumbnail.png"
+  },
+  {
+    "id": "lijst_02_zwart_zwart",
+    "name": "Zwart",
+    "description": "Volledig zwarte baklijst",
+    "thumbnail": "lijst_02_zwart_zwart_thumbnail.png"
+  },
+  {
+    "id": "lijst_03_zwart_rood",
+    "name": "Zwart + rood",
+    "description": "Zwarte buitenlijst + rode binnenlijst",
+    "thumbnail": "lijst_03_zwart_rood_thumbnail.png"
+  }
+]

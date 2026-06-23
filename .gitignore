@@ -1,0 +1,8 @@
+node_modules
+.vercel
+.env
+.DS_Store
+dist
+src/imports/galerie-hengelo-master.mp4
+
+/src/generated/prisma

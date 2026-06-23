@@ -1,0 +1,1021 @@
+/**
+ * De Kunst van Kunst - Theme V2.1
+ * Typografie- en designupdate
+ * Rustige, feitelijke verificatieplek voor de Kunst-Waardecheque
+ *
+ * Scope:
+ * - Geen inhoudelijke wijzigingen
+ * - Geen route- of CTA-wijzigingen
+ * - Geen webshop-, catalogus-, badge- of conversie-esthetiek
+ */
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* ------------------------------------------------------------
+   * Merkkleuren — stiller, warmer, minder conversie-hard
+   * ------------------------------------------------------------ */
+
+  --brand-bordeaux: #3a171c;
+  --brand-bordeaux-deep: #271014;
+  --brand-cream: #f4efe7;
+  --brand-cream-light: #faf7f1;
+  --brand-cream-warm: #eee5da;
+  --brand-gold: #9b835f;
+  --brand-gold-bright: #b79a6d;
+  --brand-ink: #17120f;
+  --brand-ink-soft: #5f5954;
+  --brand-ink-mute: #8d837b;
+  --brand-ochre: var(--brand-gold);
+
+  /* ------------------------------------------------------------
+   * Oppervlakken
+   * ------------------------------------------------------------ */
+
+  --surface-page: var(--brand-cream);
+  --surface-card: rgba(250, 247, 241, 0.72);
+  --surface-muted: var(--brand-cream-light);
+  --surface-raised: #fbf8f3;
+
+  /* ------------------------------------------------------------
+   * Randen en schaduw
+   * ------------------------------------------------------------ */
+
+  --border-soft: rgba(23, 18, 15, 0.09);
+  --border-strong: rgba(23, 18, 15, 0.18);
+  --border-gold-soft: rgba(155, 131, 95, 0.28);
+
+  --text-primary: var(--brand-ink);
+  --text-secondary: var(--brand-ink-soft);
+  --text-muted: var(--brand-ink-mute);
+
+  --state-success: var(--brand-ink);
+  --state-warning: var(--brand-ink);
+  --state-destructive: var(--brand-ink);
+  --state-info: var(--brand-ink-soft);
+
+  --shadow-xs: 0 1px 2px rgba(23, 18, 15, 0.035);
+  --shadow-soft: 0 1px 3px rgba(23, 18, 15, 0.045);
+  --shadow-md: 0 2px 8px rgba(23, 18, 15, 0.055);
+  --shadow-lg: 0 8px 24px rgba(23, 18, 15, 0.06);
+  --shadow-cheque: 0 1px 3px rgba(23, 18, 15, 0.045);
+  --shadow-focus: 0 0 0 1px var(--brand-bordeaux);
+
+  /* ------------------------------------------------------------
+   * Typografie
+   * ------------------------------------------------------------ */
+
+  --text-display: 52px;
+  --text-display-mobile: 38px;
+
+  --text-h1: 48px;
+  --text-h1-mobile: 36px;
+
+  --text-h2: 34px;
+  --text-h2-mobile: 26px;
+
+  --text-h3: 24px;
+  --text-h3-mobile: 21px;
+
+  --text-body: 17px;
+  --text-body-mobile: 16px;
+
+  --text-body-sm: 14px;
+  --text-label: 13px;
+  --text-button: 15px;
+  --text-caption: 13px;
+  --text-footnote: 12px;
+
+  --lh-tight: 1.08;
+  --lh-snug: 1.22;
+  --lh-normal: 1.65;
+  --lh-relaxed: 1.72;
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+
+  --tracking-tight: -0.018em;
+  --tracking-body: 0;
+  --tracking-button: 0.01em;
+  --tracking-caption: 0.01em;
+  --tracking-eyebrow: 0.16em;
+
+  --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+
+  /* ------------------------------------------------------------
+   * Vorm
+   * ------------------------------------------------------------ */
+
+  --radius-card: 2px;
+  --radius-button: 2px;
+  --radius-input: 2px;
+  --radius-cheque: 2px;
+  --radius: 2px;
+
+  /* ------------------------------------------------------------
+   * Ruimte
+   * ------------------------------------------------------------ */
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-28: 7rem;
+  --space-32: 8rem;
+
+  /* ------------------------------------------------------------
+   * Shadcn / Tailwind tokens
+   * ------------------------------------------------------------ */
+
+  --background: var(--brand-cream);
+  --foreground: var(--brand-ink);
+
+  --card: var(--surface-card);
+  --card-foreground: var(--brand-ink);
+
+  --popover: var(--surface-raised);
+  --popover-foreground: var(--brand-ink);
+
+  --primary: var(--brand-bordeaux);
+  --primary-foreground: #fffaf4;
+
+  --secondary: var(--brand-cream-light);
+  --secondary-foreground: var(--brand-ink);
+
+  --muted: var(--brand-cream-light);
+  --muted-foreground: var(--brand-ink-soft);
+
+  --accent: var(--brand-gold);
+  --accent-foreground: var(--brand-ink);
+
+  --destructive: var(--brand-bordeaux);
+  --destructive-foreground: var(--brand-cream);
+
+  --border: var(--border-soft);
+  --input: transparent;
+  --input-background: var(--surface-raised);
+  --ring: var(--brand-bordeaux);
+  --switch-background: var(--brand-ink-mute);
+
+  --font-size: 16px;
+  --text: var(--foreground);
+
+  --chart-1: var(--brand-bordeaux);
+  --chart-2: var(--brand-gold);
+  --chart-3: var(--brand-ink);
+  --chart-4: var(--brand-ink-soft);
+  --chart-5: var(--brand-bordeaux-deep);
+
+  --sidebar: var(--brand-cream);
+  --sidebar-foreground: var(--brand-ink);
+  --sidebar-primary: var(--brand-ink);
+  --sidebar-primary-foreground: var(--brand-cream);
+  --sidebar-accent: var(--brand-cream-light);
+  --sidebar-accent-foreground: var(--brand-ink);
+  --sidebar-border: var(--border-soft);
+  --sidebar-ring: var(--brand-gold);
+}
+
+/* DKVK heeft geen dark mode in V1; :root blijft leidend. */
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-ring: var(--ring);
+  --color-switch-background: var(--switch-background);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Merkkleur tokens */
+  --color-brand-cream: var(--brand-cream);
+  --color-brand-cream-light: var(--brand-cream-light);
+  --color-brand-cream-warm: var(--brand-cream-warm);
+  --color-brand-ink: var(--brand-ink);
+  --color-brand-ink-soft: var(--brand-ink-soft);
+  --color-brand-ink-mute: var(--brand-ink-mute);
+  --color-brand-gold: var(--brand-gold);
+  --color-brand-ochre: var(--brand-ochre);
+  --color-brand-bordeaux: var(--brand-bordeaux);
+  --color-brand-bordeaux-deep: var(--brand-bordeaux-deep);
+
+  /* Oppervlak tokens */
+  --color-surface-page: var(--surface-page);
+  --color-surface-card: var(--surface-card);
+  --color-surface-muted: var(--surface-muted);
+  --color-surface-raised: var(--surface-raised);
+
+  /* Rand tokens */
+  --color-border-soft: var(--border-soft);
+  --color-border-strong: var(--border-strong);
+  --color-border-gold-soft: var(--border-gold-soft);
+
+  /* Tekst tokens */
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+
+  /* Status tokens */
+  --color-state-success: var(--state-success);
+  --color-state-warning: var(--state-warning);
+  --color-state-destructive: var(--state-destructive);
+  --color-state-info: var(--state-info);
+
+  /* Radius tokens */
+  --radius-card: var(--radius-card);
+  --radius-button: var(--radius-button);
+  --radius-input: var(--radius-input);
+  --radius-cheque: var(--radius-cheque);
+  --radius-sm: calc(var(--radius) - 1px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html,
+  body,
+  #root {
+    width: 100%;
+    min-height: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  html {
+    font-size: var(--font-size);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  main {
+    width: 100%;
+  }
+
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    max-width: 100%;
+    height: auto;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif);
+    font-feature-settings: "ss01", "cv11";
+    background-color: var(--surface-page);
+    color: var(--text-primary);
+  }
+
+  /* ------------------------------------------------------------
+   * Typografie
+   * ------------------------------------------------------------ */
+
+  .text-display {
+    font-family: var(--font-sans, ui-sans-serif, system-ui, sans-serif);
+    font-size: var(--text-display-mobile);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--lh-tight);
+    letter-spacing: var(--tracking-tight);
+    text-transform: none;
+    color: var(--brand-bordeaux);
+    text-wrap: balance;
+  }
+
+  @media (min-width: 768px) {
+    .text-display {
+      font-size: var(--text-display);
+      line-height: var(--lh-tight);
+    }
+  }
+
+  h1 {
+    font-family: var(--font-sans, ui-sans-serif, system-ui, sans-serif);
+    font-size: var(--text-h1-mobile);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.12;
+    letter-spacing: var(--tracking-tight);
+    color: var(--brand-bordeaux);
+    text-wrap: balance;
+  }
+
+  @media (min-width: 768px) {
+    h1 {
+      font-size: var(--text-h1);
+    }
+  }
+
+  h2 {
+    font-family: var(--font-sans, ui-sans-serif, system-ui, sans-serif);
+    font-size: var(--text-h2-mobile);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.18;
+    letter-spacing: -0.012em;
+    color: var(--brand-ink);
+    text-wrap: balance;
+  }
+
+  @media (min-width: 768px) {
+    h2 {
+      font-size: var(--text-h2);
+      line-height: 1.16;
+    }
+  }
+
+  h3 {
+    font-family: var(--font-sans, ui-sans-serif, system-ui, sans-serif);
+    font-size: var(--text-h3-mobile);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.22;
+    letter-spacing: -0.006em;
+    color: var(--brand-ink);
+    text-wrap: balance;
+  }
+
+  @media (min-width: 768px) {
+    h3 {
+      font-size: var(--text-h3);
+      line-height: 1.18;
+    }
+  }
+
+  h4 {
+    font-family: var(--font-sans, ui-sans-serif, system-ui, sans-serif);
+    font-size: var(--text-body);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.35;
+    color: var(--brand-ink);
+  }
+
+  p,
+  body {
+    font-size: var(--text-body-mobile);
+    font-weight: var(--font-weight-normal);
+    line-height: var(--lh-normal);
+    letter-spacing: var(--tracking-body);
+  }
+
+  @media (min-width: 768px) {
+    p,
+    body {
+      font-size: var(--text-body);
+      line-height: var(--lh-relaxed);
+    }
+  }
+
+  p {
+    color: var(--text-secondary);
+  }
+
+  strong,
+  b {
+    font-weight: var(--font-weight-medium);
+    color: var(--brand-ink);
+  }
+
+  small {
+    font-size: var(--text-footnote);
+    line-height: 1.5;
+  }
+
+  label {
+    font-size: var(--text-label);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.4;
+    color: var(--brand-ink);
+  }
+
+  button {
+    font-family: var(--font-sans, ui-sans-serif, system-ui, sans-serif);
+    font-size: var(--text-button);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.45;
+    letter-spacing: var(--tracking-button);
+    text-transform: none;
+  }
+
+  input,
+  textarea {
+    font-size: var(--text-body-mobile);
+    font-weight: var(--font-weight-normal);
+    line-height: var(--lh-normal);
+  }
+
+  @media (min-width: 768px) {
+    input,
+    textarea {
+      font-size: var(--text-body);
+    }
+  }
+
+  /* Alleen licht gewicht voor bedragen op cheque-details */
+  .cheque-amount {
+    font-weight: 300;
+    font-feature-settings: "tnum";
+    letter-spacing: -0.01em;
+  }
+
+  /* Maximale regelbreedte voor leesbaarheid */
+  .prose {
+    max-width: 66ch;
+  }
+
+  .prose p + p {
+    margin-top: 1em;
+  }
+
+  *:focus-visible {
+    outline: 1px solid var(--brand-bordeaux);
+    outline-offset: 3px;
+    box-shadow: none;
+  }
+
+  /* ------------------------------------------------------------
+   * Buttons
+   * ------------------------------------------------------------ */
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    border: 1px solid transparent;
+    background: var(--primary);
+    color: var(--primary-foreground);
+    padding: 14px 24px;
+    border-radius: var(--radius-button);
+    font-weight: var(--font-weight-medium);
+    letter-spacing: var(--tracking-button);
+    box-shadow: none;
+    transition:
+      background-color 150ms var(--ease-out),
+      border-color 150ms var(--ease-out),
+      color 150ms var(--ease-out);
+  }
+
+  .btn-primary:hover {
+    background: var(--brand-bordeaux-deep);
+  }
+
+  .btn-primary:active {
+    background: #1f0c10;
+  }
+
+  .btn-primary:disabled,
+  .btn-secondary:disabled {
+    color: var(--brand-ink-mute);
+    border-color: var(--border-soft);
+    background: var(--brand-cream-light);
+    cursor: not-allowed;
+  }
+
+  @media (min-width: 768px) {
+    .btn-primary {
+      min-height: 52px;
+      padding: 15px 26px;
+    }
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    background-color: transparent;
+    border: 1px solid var(--border-strong);
+    color: var(--brand-ink);
+    padding: 14px 24px;
+    border-radius: var(--radius-button);
+    font-weight: var(--font-weight-medium);
+    letter-spacing: var(--tracking-button);
+    box-shadow: none;
+    transition:
+      background-color 150ms var(--ease-out),
+      border-color 150ms var(--ease-out),
+      color 150ms var(--ease-out);
+  }
+
+  .btn-secondary:hover {
+    background-color: rgba(250, 247, 241, 0.72);
+    border-color: var(--brand-ink-soft);
+    color: var(--brand-ink);
+  }
+
+  .btn-secondary-light {
+    border-color: rgba(244, 239, 231, 0.72);
+    color: var(--brand-cream);
+    background-color: transparent;
+  }
+
+  .btn-secondary-light:hover {
+    border-color: var(--brand-cream);
+    background-color: rgba(244, 239, 231, 0.08);
+  }
+
+  /* ------------------------------------------------------------
+   * Cards en inputs
+   * ------------------------------------------------------------ */
+
+  .card {
+    background-color: var(--surface-card);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-card);
+    box-shadow: none;
+  }
+
+  .input {
+    background-color: var(--input-background);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-input);
+    padding: 0.875rem 1rem;
+    color: var(--brand-ink);
+    transition:
+      border-color 150ms var(--ease-out),
+      background-color 150ms var(--ease-out),
+      box-shadow 150ms var(--ease-out);
+  }
+
+  .input:hover {
+    border-color: var(--border-strong);
+  }
+
+  .input:focus,
+  .input:focus-visible {
+    border-color: var(--brand-bordeaux);
+    background-color: #fffaf4;
+    box-shadow: none;
+  }
+
+  .input::placeholder {
+    color: var(--brand-ink-mute);
+  }
+
+  .input.error {
+    border-color: var(--brand-bordeaux);
+    background-color: var(--brand-cream-light);
+  }
+}
+
+@layer utilities {
+  /* ------------------------------------------------------------
+   * Containers
+   * ------------------------------------------------------------ */
+
+  .site-container {
+    width: min(100% - 40px, 1120px);
+    margin-inline: auto;
+  }
+
+  @media (min-width: 768px) {
+    .site-container {
+      width: min(100% - 64px, 1120px);
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .site-container {
+      width: min(100% - 96px, 1120px);
+    }
+  }
+
+  .site-container-narrow {
+    width: min(100% - 40px, 720px);
+    margin-inline: auto;
+  }
+
+  @media (min-width: 768px) {
+    .site-container-narrow {
+      width: min(100% - 64px, 720px);
+    }
+  }
+
+  .site-container-wide {
+    width: min(100% - 40px, 1280px);
+    margin-inline: auto;
+  }
+
+  @media (min-width: 768px) {
+    .site-container-wide {
+      width: min(100% - 64px, 1280px);
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .site-container-wide {
+      width: min(100% - 96px, 1280px);
+    }
+  }
+
+  /* ------------------------------------------------------------
+   * DKVK tekstutilities
+   * ------------------------------------------------------------ */
+
+  .dkvk-body {
+    font-family: var(--font-sans, ui-sans-serif, system-ui, sans-serif);
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: var(--lh-normal);
+    color: var(--brand-ink-soft);
+  }
+
+  @media (min-width: 768px) {
+    .dkvk-body {
+      font-size: 1.0625rem;
+      line-height: var(--lh-relaxed);
+    }
+  }
+
+  .dkvk-caption {
+    font-family: var(--font-sans, ui-sans-serif, system-ui, sans-serif);
+    font-weight: 400;
+    font-size: var(--text-caption);
+    letter-spacing: var(--tracking-caption);
+    line-height: 1.45;
+    text-transform: none;
+    color: var(--brand-ink-soft);
+  }
+
+  .dkvk-footnote {
+    font-family: var(--font-sans, ui-sans-serif, system-ui, sans-serif);
+    font-weight: 400;
+    font-size: var(--text-footnote);
+    line-height: 1.55;
+    color: var(--brand-ink-mute);
+  }
+
+  .dkvk-number-code {
+    font-family: var(--font-sans, ui-sans-serif, system-ui, sans-serif);
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--brand-ink);
+    font-feature-settings: "tnum";
+    font-variant-numeric: tabular-nums;
+  }
+
+  .font-mono {
+    font-family: var(--font-sans, ui-sans-serif, system-ui, sans-serif) !important;
+    font-feature-settings: "tnum", "cv11";
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.035em;
+  }
+
+  .dkvk-eyebrow {
+    font-family: var(--font-sans, ui-sans-serif, system-ui, sans-serif);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: var(--tracking-eyebrow);
+    line-height: 1.25;
+    text-transform: uppercase;
+    color: var(--brand-gold);
+  }
+
+  .dkvk-eyebrow--ceremonial {
+    letter-spacing: 0.18em;
+  }
+
+  .dkvk-eyebrow-ink {
+    font-family: var(--font-sans, ui-sans-serif, system-ui, sans-serif);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: var(--tracking-eyebrow);
+    line-height: 1.25;
+    text-transform: uppercase;
+    color: var(--brand-ink-soft);
+  }
+
+  .dkvk-eyebrow--on-dark {
+    color: var(--brand-cream);
+  }
+
+  .dkvk-gold-rule {
+    display: block;
+    width: 56px;
+    height: 1px;
+    background-color: var(--brand-gold);
+    border: 0;
+  }
+
+  .dkvk-display-l-italic {
+    font-family: var(--font-display, Georgia, serif);
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(1.35rem, 2.2vw, 1.85rem);
+    line-height: 1.38;
+    letter-spacing: -0.01em;
+    color: var(--brand-bordeaux);
+  }
+
+  .homepage-verify-btn {
+    min-height: 44px;
+    padding: 11px 17px;
+    font-size: 15px;
+    box-shadow: none;
+    transition:
+      background-color 140ms var(--ease-out),
+      color 140ms var(--ease-out),
+      border-color 140ms var(--ease-out);
+  }
+
+  .homepage-verify-btn:hover {
+    background: color-mix(in srgb, var(--primary) 92%, var(--brand-cream));
+  }
+
+  .homepage-verify-btn:focus-visible {
+    box-shadow: none;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* ------------------------------------------------------------
+   * Ruimte
+   * ------------------------------------------------------------ */
+
+  .section-spacing {
+    padding-top: var(--space-16);
+    padding-bottom: var(--space-16);
+  }
+
+  @media (min-width: 768px) {
+    .section-spacing {
+      padding-top: var(--space-24);
+      padding-bottom: var(--space-24);
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .section-spacing {
+      padding-top: var(--space-28);
+      padding-bottom: var(--space-28);
+    }
+  }
+
+  .section-spacing-compact {
+    padding-top: var(--space-12);
+    padding-bottom: var(--space-12);
+  }
+
+  @media (min-width: 768px) {
+    .section-spacing-compact {
+      padding-top: var(--space-16);
+      padding-bottom: var(--space-16);
+    }
+  }
+
+  .section-spacing-large {
+    padding-top: var(--space-20);
+    padding-bottom: var(--space-20);
+  }
+
+  @media (min-width: 768px) {
+    .section-spacing-large {
+      padding-top: var(--space-32);
+      padding-bottom: var(--space-32);
+    }
+  }
+
+  /* ------------------------------------------------------------
+   * Beeldbehandeling
+   * ------------------------------------------------------------ */
+
+  .dkvk-media {
+    display: block;
+    width: 100%;
+    background: var(--brand-cream-warm);
+    border: 1px solid var(--border-soft);
+    overflow: hidden;
+  }
+
+  .dkvk-media img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .dkvk-media-caption {
+    margin-top: 0.75rem;
+    font-size: var(--text-caption);
+    line-height: 1.45;
+    letter-spacing: var(--tracking-caption);
+    color: var(--brand-ink-soft);
+    text-transform: none;
+  }
+
+  /* ------------------------------------------------------------
+   * Cheque visualisatie
+   * ------------------------------------------------------------ */
+
+  .cheque-card {
+    position: relative;
+    background-color: var(--surface-raised);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-cheque);
+    box-shadow: var(--shadow-cheque);
+    padding: var(--space-6);
+    overflow: hidden;
+  }
+
+  .cheque-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    background: var(--brand-bordeaux);
+  }
+
+  .cheque-card::after {
+    content: "";
+    position: absolute;
+    right: 1.5rem;
+    top: 1.5rem;
+    width: 26px;
+    height: 26px;
+    border: 1px solid var(--border-gold-soft);
+    border-radius: 999px;
+  }
+
+  @media (min-width: 768px) {
+    .cheque-card {
+      padding: var(--space-8);
+    }
+  }
+
+  /* ------------------------------------------------------------
+   * Planner day cards
+   * ------------------------------------------------------------ */
+
+  .day-card {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: var(--surface-raised);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-md);
+    padding: 1.25rem 1.5rem;
+    cursor: pointer;
+    box-shadow: none;
+    transition:
+      border-color 150ms var(--ease-out),
+      background-color 150ms var(--ease-out),
+      box-shadow 150ms var(--ease-out);
+  }
+
+  .day-card + .day-card {
+    margin-top: 0.875rem;
+  }
+
+  .day-card:hover {
+    border-color: var(--border-strong);
+    background: #fffaf4;
+  }
+
+  .day-card--selected {
+    border-color: var(--brand-bordeaux);
+    background: var(--brand-cream-light);
+    box-shadow: 0 0 0 1px var(--brand-bordeaux) inset;
+  }
+
+  .day-card-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.875rem;
+  }
+
+  .day-card-day {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--brand-ink-soft);
+  }
+
+  .day-card-date {
+    font-size: 0.875rem;
+    color: var(--brand-ink-soft);
+  }
+
+  .day-card-included-label {
+    font-size: 0.8125rem;
+    color: var(--brand-ink-soft);
+    margin: 0 0 0.5rem;
+    line-height: 1.5;
+  }
+
+  .day-card-included {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .day-card-included li {
+    font-size: 0.9375rem;
+    line-height: 1.55;
+    color: var(--brand-ink);
+    padding: 0.25rem 0 0.25rem 1.25rem;
+    position: relative;
+  }
+
+  .day-card-included li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.875rem;
+    width: 0.625rem;
+    height: 1px;
+    background: var(--brand-gold);
+  }
+
+  .included-summary {
+    padding: 1rem 1.25rem;
+    background: var(--surface-raised);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-md);
+    box-shadow: none;
+  }
+
+  .included-summary-eyebrow {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--brand-ink-soft);
+    margin: 0 0 0.5rem;
+  }
+
+  .included-summary-note {
+    font-size: 0.8125rem;
+    color: var(--brand-ink-soft);
+    margin: 0.625rem 0 0;
+    line-height: 1.5;
+  }
+}

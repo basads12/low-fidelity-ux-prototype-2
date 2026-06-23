@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1f4f73"/>
+      <stop offset="100%" stop-color="#b0302d"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="900" fill="url(#bg)"/>
+  <circle cx="120" cy="160" r="50" fill="#f5de86" opacity="0.9"/>
+  <path d="M120 210 L260 510 L180 860" stroke="#f5de86" stroke-width="18" fill="none"/>
+  <path d="M270 150 L390 390 L320 860" stroke="#d9f0ff" stroke-width="20" fill="none"/>
+  <text x="40" y="860" fill="#ffffff" font-family="Arial" font-size="32">KWC Demo Kunstwerk</text>
+</svg>

@@ -1,0 +1,10 @@
+{
+  "rewrites": [
+    { "source": "/kunst-visualizer", "destination": "/index.html" },
+    { "source": "/over-de-galerie", "destination": "/index.html" },
+    { "source": "/veelgestelde-vragen", "destination": "/index.html" },
+    { "source": "/contact", "destination": "/index.html" },
+    { "source": "/reviews", "destination": "/index.html" },
+    { "source": "/schilderij-omruilen", "destination": "/index.html" }
+  ]
+}

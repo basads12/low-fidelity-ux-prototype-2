@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="760" viewBox="0 0 1400 760">
+  <title>Schilderijformaten 3D 4 cm dikte</title>
+  
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto-start-reverse">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#786f68"/>
+    </marker>
+    <marker id="arrowSmall" markerWidth="5" markerHeight="5" refX="2.5" refY="2.5" orient="auto-start-reverse">
+      <path d="M0,0 L5,2.5 L0,5 Z" fill="#786f68"/>
+    </marker>
+    <style>
+      .heading { font-family: Arial, Helvetica, sans-serif; font-size: 28px; font-weight: 700; fill: #5a524b; }
+      .title { font-family: Arial, Helvetica, sans-serif; font-size: 21px; font-weight: 700; fill: #5a524b; }
+      .sub { font-family: Arial, Helvetica, sans-serif; font-size: 16px; fill: #5a524b; }
+      .dim { font-family: Arial, Helvetica, sans-serif; font-size: 14px; fill: #786f68; }
+      .note { font-family: Arial, Helvetica, sans-serif; font-size: 12px; fill: #827a70; }
+    </style>
+    
+  </defs>
+  <rect width="1400" height="760" fill="#ffffff"/>
+  <text x="700.0" y="48.0" text-anchor="middle" class="heading">Schilderijformaten met 4 cm dikte</text>
+  <polygon points="132.0,561.0 355.0,553.0 355.0,559.0 132.0,567.0" fill="#9b9b9b" opacity="0.20"/>
+  <polygon points="353.0,119.0 358.0,119.0 358.0,551.0 353.0,551.0" fill="#9b9b9b" opacity="0.18"/>
+  <polygon points="120.0,120.0 132.0,112.0 348.0,112.0 336.0,120.0" fill="#f7f1e8" stroke="#d6af7e" stroke-width="1"/>
+  <polygon points="336.0,120.0 348.0,112.0 348.0,544.0 336.0,552.0" fill="#f4ebde" stroke="#d6af7e" stroke-width="1"/>
+  <polygon points="120.0,120.0 336.0,120.0 336.0,552.0 120.0,552.0" fill="#fffefe" stroke="#d6af7e" stroke-width="1"/>
+  <line x1="132.0" y1="112.0" x2="348.0" y2="112.0" stroke="#d6af7e" stroke-width="1"/>
+  <line x1="348.0" y1="112.0" x2="348.0" y2="544.0" stroke="#d6af7e" stroke-width="1"/>
+  <line x1="336.0" y1="552.0" x2="348.0" y2="544.0" stroke="#d6af7e" stroke-width="1"/>
+  <line x1="120.0" y1="586.0" x2="336.0" y2="586.0" stroke="#786f68" stroke-width="1" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <text x="228.0" y="610.0" text-anchor="middle" class="dim">60 cm</text>
+  <line x1="92.0" y1="120.0" x2="92.0" y2="552.0" stroke="#786f68" stroke-width="1" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <text x="77.0" y="336.0" text-anchor="middle" class="dim" transform="rotate(-90 77.0,336.0)">120 cm</text>
+  <line x1="338.0" y1="118.0" x2="347.0" y2="113.0" stroke="#786f68" stroke-width="1" marker-start="url(#arrowSmall)" marker-end="url(#arrowSmall)"/>
+  <text x="360.0" y="117.0" text-anchor="start" class="dim">4 cm</text>
+  <text x="234.0" y="640.0" text-anchor="middle" class="title">Staand</text>
+  <text x="234.0" y="666.0" text-anchor="middle" class="sub">60 × 120 cm · dikte 4 cm</text>
+  <polygon points="522.0,455.0 961.0,447.0 961.0,453.0 522.0,461.0" fill="#9b9b9b" opacity="0.20"/>
+  <polygon points="959.0,229.0 964.0,229.0 964.0,445.0 959.0,445.0" fill="#9b9b9b" opacity="0.18"/>
+  <polygon points="510.0,230.0 522.0,222.0 954.0,222.0 942.0,230.0" fill="#f7f1e8" stroke="#d6af7e" stroke-width="1"/>
+  <polygon points="942.0,230.0 954.0,222.0 954.0,438.0 942.0,446.0" fill="#f4ebde" stroke="#d6af7e" stroke-width="1"/>
+  <polygon points="510.0,230.0 942.0,230.0 942.0,446.0 510.0,446.0" fill="#fffefe" stroke="#d6af7e" stroke-width="1"/>
+  <line x1="522.0" y1="222.0" x2="954.0" y2="222.0" stroke="#d6af7e" stroke-width="1"/>
+  <line x1="954.0" y1="222.0" x2="954.0" y2="438.0" stroke="#d6af7e" stroke-width="1"/>
+  <line x1="942.0" y1="446.0" x2="954.0" y2="438.0" stroke="#d6af7e" stroke-width="1"/>
+  <line x1="510.0" y1="480.0" x2="942.0" y2="480.0" stroke="#786f68" stroke-width="1" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <text x="726.0" y="504.0" text-anchor="middle" class="dim">120 cm</text>
+  <line x1="482.0" y1="230.0" x2="482.0" y2="446.0" stroke="#786f68" stroke-width="1" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <text x="467.0" y="338.0" text-anchor="middle" class="dim" transform="rotate(-90 467.0,338.0)">60 cm</text>
+  <line x1="944.0" y1="228.0" x2="953.0" y2="223.0" stroke="#786f68" stroke-width="1" marker-start="url(#arrowSmall)" marker-end="url(#arrowSmall)"/>
+  <text x="966.0" y="227.0" text-anchor="start" class="dim">4 cm</text>
+  <text x="732.0" y="534.0" text-anchor="middle" class="title">Liggend</text>
+  <text x="732.0" y="560.0" text-anchor="middle" class="sub">60 × 120 cm · dikte 4 cm</text>
+  <polygon points="1062.0,455.0 1285.0,447.0 1285.0,453.0 1062.0,461.0" fill="#9b9b9b" opacity="0.20"/>
+  <polygon points="1283.0,229.0 1288.0,229.0 1288.0,445.0 1283.0,445.0" fill="#9b9b9b" opacity="0.18"/>
+  <polygon points="1050.0,230.0 1062.0,222.0 1278.0,222.0 1266.0,230.0" fill="#f7f1e8" stroke="#d6af7e" stroke-width="1"/>
+  <polygon points="1266.0,230.0 1278.0,222.0 1278.0,438.0 1266.0,446.0" fill="#f4ebde" stroke="#d6af7e" stroke-width="1"/>
+  <polygon points="1050.0,230.0 1266.0,230.0 1266.0,446.0 1050.0,446.0" fill="#fffefe" stroke="#d6af7e" stroke-width="1"/>
+  <line x1="1062.0" y1="222.0" x2="1278.0" y2="222.0" stroke="#d6af7e" stroke-width="1"/>
+  <line x1="1278.0" y1="222.0" x2="1278.0" y2="438.0" stroke="#d6af7e" stroke-width="1"/>
+  <line x1="1266.0" y1="446.0" x2="1278.0" y2="438.0" stroke="#d6af7e" stroke-width="1"/>
+  <line x1="1050.0" y1="480.0" x2="1266.0" y2="480.0" stroke="#786f68" stroke-width="1" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <text x="1158.0" y="504.0" text-anchor="middle" class="dim">60 cm</text>
+  <line x1="1022.0" y1="230.0" x2="1022.0" y2="446.0" stroke="#786f68" stroke-width="1" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <text x="1007.0" y="338.0" text-anchor="middle" class="dim" transform="rotate(-90 1007.0,338.0)">60 cm</text>
+  <line x1="1268.0" y1="228.0" x2="1277.0" y2="223.0" stroke="#786f68" stroke-width="1" marker-start="url(#arrowSmall)" marker-end="url(#arrowSmall)"/>
+  <text x="1290.0" y="227.0" text-anchor="start" class="dim">4 cm</text>
+  <text x="1164.0" y="534.0" text-anchor="middle" class="title">Vierkant</text>
+  <text x="1164.0" y="560.0" text-anchor="middle" class="sub">60 × 60 cm · dikte 4 cm</text>
+  <text x="726.0" y="585.0" text-anchor="middle" class="note">Liggend: lange zijde horizontaal</text>
+</svg>

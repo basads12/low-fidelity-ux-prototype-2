@@ -1,0 +1,98 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+enum KwcChequeStatus {
+  ACTIVE
+  USED
+  PARTIALLY_USED
+  EXPIRED
+  BLOCKED
+}
+
+enum OrderStatus {
+  DRAFT
+  WAITING_FOR_EMPLOYEE_APPROVAL
+  APPROVED
+  PAID
+  CANCELLED
+}
+
+model Customer {
+  id        String   @id @default(cuid())
+  firstName String
+  lastName  String
+  email     String
+  phone     String
+  address   String?
+  consent   Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  orders    Order[]
+}
+
+model Artwork {
+  id               String   @id @default(cuid())
+  title            String
+  artist           String
+  imageUrl         String
+  defaultType      String
+  availableFormats Json
+  basePrices       Json
+  inventoryStatus  String
+  qrToken          String   @unique
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+  orders           Order[]
+}
+
+model KwcCheque {
+  id                 String          @id @default(cuid())
+  number             String          @unique
+  initialValueCents  Int
+  remainingValueCents Int
+  status             KwcChequeStatus @default(ACTIVE)
+  createdAt          DateTime        @default(now())
+  updatedAt          DateTime        @updatedAt
+  orders             Order[]
+}
+
+model Order {
+  id                           String      @id @default(cuid())
+  orderNumber                  String      @unique
+  artworkId                    String
+  customerId                   String?
+  type                         String
+  formatId                     String
+  widthCm                      Int
+  heightCm                     Int
+  frameOptionId                String
+  frameOuterColor              String
+  frameInnerColor              String
+  quantity                     Int         @default(1)
+  basePriceCents               Int
+  framePriceCents              Int
+  totalBeforeKwcCents          Int
+  kwcChequeId                  String?
+  kwcAppliedCents              Int         @default(0)
+  totalDueCents                Int
+  previewImageDataUrl          String?
+  wallSetting                  String
+  wallColor                    String
+  artDirectionPreset           String      @default("classic")
+  status                       OrderStatus @default(DRAFT)
+  employeeName                 String?
+  approvedAt                   DateTime?
+  paidAt                       DateTime?
+  createdAt                    DateTime    @default(now())
+  updatedAt                    DateTime    @updatedAt
+
+  artwork Artwork   @relation(fields: [artworkId], references: [id])
+  customer Customer? @relation(fields: [customerId], references: [id])
+  kwcCheque KwcCheque? @relation(fields: [kwcChequeId], references: [id])
+}
