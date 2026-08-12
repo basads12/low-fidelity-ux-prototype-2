@@ -7,6 +7,8 @@ import heroDesktopImage from '../../imports/hero-desktop.png';
 import galerieHengeloVideo from '../../imports/galerie-hengelo-master.mp4';
 import galerieHengeloPoster from '../../imports/galerie-hengelo-web-poster.jpg';
 import jcfBusinessFriend from '../../imports/jcf-business-friend-cutout.png';
+import headerAfspraakKunstwerk from '../../imports/header-afspraak-kunstwerk-96.webp';
+import { KunstwisselFiguur } from './KunstwisselFiguur';
 import voorwaardenPdf from '../../imports/Algemene_Voorwaarden_Galerie_De_Kunst_van_Kunst.pdf';
 import privacyPdf from '../../imports/Privacyverklaring_Galerie_De_Kunst_van_Kunst_2026-04-26.pdf';
 
@@ -33,7 +35,6 @@ export function Homepage({ onNavigate, updateData, onVerificationSuccess }: Home
   const [showPrivacy, setShowPrivacy] = useState(false);
   const [chequeNumber, setChequeNumber] = useState('');
   const [postalCode, setPostalCode] = useState('');
-  const [exchangePaintingNumber, setExchangePaintingNumber] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [isChecking, setIsChecking] = useState(false);
 
@@ -156,14 +157,28 @@ export function Homepage({ onNavigate, updateData, onVerificationSuccess }: Home
               <span className="hidden xl:inline">074 291 48 57</span>
             </div>
           </div>
-          <a
-            href="https://review-dekunstvankunst.nl"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden shrink-0 text-[15px] font-medium underline decoration-[color:var(--brand-gold)] decoration-1 underline-offset-3 hover:opacity-85 lg:inline-flex"
-          >
-            4,5/5 uit 1700+ reviews
-          </a>
+          <div className="hidden items-center gap-3 lg:flex">
+            <button
+              type="button"
+              onClick={() => onNavigate('plan-uw-bezoek')}
+              className="btn-primary min-h-0 px-4 py-2 text-sm"
+            >
+              Maak hier uw afspraak
+            </button>
+            <img
+              src={headerAfspraakKunstwerk}
+              alt="Voorbeeld van een schilderij uit de galerie"
+              className="h-12 w-12 rounded-sm object-cover"
+            />
+            <a
+              href="https://review-dekunstvankunst.nl"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="shrink-0 text-[15px] font-medium underline decoration-[color:var(--brand-gold)] decoration-1 underline-offset-3 hover:opacity-85"
+            >
+              4,5/5 uit 1700+ reviews
+            </a>
+          </div>
         </div>
       </div>
 
@@ -179,8 +194,11 @@ export function Homepage({ onNavigate, updateData, onVerificationSuccess }: Home
         </picture>
 
         <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(64,51,35,0.18)_0%,rgba(64,51,35,0.12)_38%,rgba(64,51,35,0)_76%)]" />
+        <div className="pointer-events-none absolute bottom-0 left-[3%] z-[5] h-[64%] md:left-[4%] md:h-[74%] lg:h-[84%]">
+          <KunstwisselFiguur className="h-full drop-shadow-[0_22px_34px_rgba(23,18,15,0.38)]" />
+        </div>
         <div className={`${PAGE_RAIL} relative z-10 grid grid-cols-4 gap-4 pt-20 pb-5 md:grid-cols-12 md:gap-6 md:pt-22 md:pb-8`}>
-          <div className="col-span-4 md:col-span-4 md:col-start-1">
+          <div className="col-span-4 md:col-span-4 md:col-start-9">
             <div className="hidden md:block md:pt-[8.5rem]">
               <div className="w-full max-w-[27rem] rounded-none border border-[color:rgba(90,84,74,0.22)] bg-[color:rgba(245,240,232,0.82)] p-4">
                 <div className="grid gap-2 md:gap-3">
@@ -209,36 +227,6 @@ export function Homepage({ onNavigate, updateData, onVerificationSuccess }: Home
                   >
                     {isChecking ? 'We controleren uw cheque.' : 'Plan uw bezoek'}
                   </button>
-                  <button
-                    type="button"
-                    onClick={() => onNavigate('art-visualizer')}
-                    className="btn-secondary w-full"
-                  >
-                    Nieuw: kunst visualizer
-                  </button>
-                  <label className="text-sm md:text-[15px] [color:var(--text-secondary)]">
-                    Schilderijnummer
-                    <input
-                      type="text"
-                      value={exchangePaintingNumber}
-                      onChange={(e) => setExchangePaintingNumber(e.target.value)}
-                      className="input mt-1 w-full bg-[var(--brand-cream-light)]"
-                    />
-                  </label>
-                  <button
-                    type="button"
-                    onClick={() => onNavigate('painting-exchange')}
-                    className="btn-secondary w-full"
-                  >
-                    Schilderij omruilen
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => onNavigate('painting-exchange')}
-                    className="text-left text-sm [color:var(--text-secondary)] underline underline-offset-4 hover:opacity-85"
-                  >
-                    Meer informatie omruilen →
-                  </button>
                   {errorMessage && (
                     <p className="text-sm [color:var(--destructive)]">{errorMessage}</p>
                   )}
@@ -249,49 +237,17 @@ export function Homepage({ onNavigate, updateData, onVerificationSuccess }: Home
         </div>
       </section>
 
-      {/* Verification Block */}
-      <section className="bg-[var(--brand-cream-light)] py-4 md:py-16">
-        <div className={`${PAGE_RAIL} grid grid-cols-4 gap-[18px] md:grid-cols-12`}>
-          <div className="col-span-4 md:col-span-6 md:col-start-1">
-            <div className="rounded-2xl border border-[rgba(0,0,0,0.08)] bg-[var(--brand-cream-light)] p-5 md:hidden">
-              <div className="grid gap-3">
-                <button
-                  onClick={() => onNavigate('cheque-input')}
-                  className="btn-primary homepage-verify-btn w-full"
-                >
-                  Plan uw bezoek
-                </button>
-                <button
-                  type="button"
-                  onClick={() => onNavigate('art-visualizer')}
-                  className="btn-secondary w-full"
-                >
-                  Nieuw: kunst visualizer
-                </button>
-                <label className="text-sm [color:var(--text-secondary)]">
-                  Schilderijnummer
-                  <input
-                    type="text"
-                    value={exchangePaintingNumber}
-                    onChange={(e) => setExchangePaintingNumber(e.target.value)}
-                    className="input mt-1 w-full bg-[var(--brand-cream-light)]"
-                  />
-                </label>
-                <button
-                  type="button"
-                  onClick={() => onNavigate('painting-exchange')}
-                  className="btn-secondary w-full"
-                >
-                  Schilderij omruilen
-                </button>
-                <button
-                  type="button"
-                  onClick={() => onNavigate('painting-exchange')}
-                  className="text-left text-sm [color:var(--text-secondary)] underline underline-offset-4 hover:opacity-85"
-                >
-                  Meer informatie omruilen →
-                </button>
-              </div>
+      {/* Verification Block (alleen mobiel; op desktop staat het formulier in de hero) */}
+      <section className="bg-[var(--brand-cream-light)] py-4 md:hidden">
+        <div className={PAGE_RAIL}>
+          <div className="rounded-2xl border border-[rgba(0,0,0,0.08)] bg-[var(--brand-cream-light)] p-5">
+            <div className="grid gap-3">
+              <button
+                onClick={() => onNavigate('cheque-input')}
+                className="btn-primary homepage-verify-btn w-full"
+              >
+                Plan uw bezoek
+              </button>
             </div>
           </div>
         </div>

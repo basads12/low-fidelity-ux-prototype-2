@@ -41,7 +41,7 @@ const PAGE_RAIL = "site-container";
 
 export function FromChequeToVisitSection() {
   return (
-    <section className="mt-0 bg-[var(--brand-cream-light)] pb-6 pt-0 md:-mt-20 md:pb-10 md:pt-0" aria-label="Hoe het werkt">
+    <section className="mt-0 bg-[var(--brand-cream-light)] pb-6 pt-0 md:pb-10 md:pt-12" aria-label="Hoe het werkt">
       <div className={PAGE_RAIL}>
         <div className="mt-0 md:-mt-3">
             <header>
