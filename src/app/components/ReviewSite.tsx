@@ -477,7 +477,7 @@ export function ReviewSite({ onNavigate }: ReviewSiteProps) {
               onClick={() => onNavigate('cheque-input')}
               className="underline underline-offset-4"
             >
-              Heeft u een Kunst-Waardecheque? Verifieer uw cheque op dekunstvankunst.nl
+              Heeft u een Kunst-Waardecheque? Plan uw bezoek op dekunstvankunst.nl
             </button>
           </div>
         </div>

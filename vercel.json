@@ -1,7 +1,10 @@
 {
   "rewrites": [
     { "source": "/kunst-visualizer", "destination": "/index.html" },
+    { "source": "/kunst-waardecheque", "destination": "/index.html" },
     { "source": "/over-de-galerie", "destination": "/index.html" },
+    { "source": "/wist-u-dat", "destination": "/index.html" },
+    { "source": "/plan-uw-bezoek", "destination": "/index.html" },
     { "source": "/veelgestelde-vragen", "destination": "/index.html" },
     { "source": "/contact", "destination": "/index.html" },
     { "source": "/reviews", "destination": "/index.html" },

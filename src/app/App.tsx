@@ -25,11 +25,17 @@ import { Styleguide } from './components/Styleguide';
 import { ReviewSite } from './components/ReviewSite';
 import { PaintingExchange } from './components/PaintingExchange';
 import { KunstVisualizer } from './components/KunstVisualizer';
+import { KunstWaardecheque } from './components/KunstWaardecheque';
+import { WistUDat } from './components/WistUDat';
+import { PlanUwBezoek } from './components/PlanUwBezoek';
 import logo from '../imports/logo_no_sinds.png';
 
 export type Screen =
   | 'homepage'
   | 'about-gallery'
+  | 'kunst-waardecheque'
+  | 'wist-u-dat'
+  | 'plan-uw-bezoek'
   | 'contact'
   | 'reviews'
   | 'faq'
@@ -57,7 +63,10 @@ export type Screen =
 
 const SCREEN_TO_PATH: Partial<Record<Screen, string>> = {
   homepage: '/',
+  'kunst-waardecheque': '/kunst-waardecheque',
   'about-gallery': '/over-de-galerie',
+  'wist-u-dat': '/wist-u-dat',
+  'plan-uw-bezoek': '/plan-uw-bezoek',
   faq: '/veelgestelde-vragen',
   contact: '/contact',
   reviews: '/reviews',
@@ -201,6 +210,12 @@ export default function App() {
         );
       case 'about-gallery':
         return <AboutGallery onNavigate={navigateTo} />;
+      case 'kunst-waardecheque':
+        return <KunstWaardecheque onNavigate={navigateTo} />;
+      case 'wist-u-dat':
+        return <WistUDat onNavigate={navigateTo} />;
+      case 'plan-uw-bezoek':
+        return <PlanUwBezoek onNavigate={navigateTo} />;
       case 'contact':
         return <Contact onNavigate={navigateTo} />;
       case 'reviews':
@@ -279,20 +294,20 @@ export default function App() {
               <img src={logo} alt="De Kunst van Kunst" className="h-auto w-20 md:w-[112px]" />
               <div className="hidden items-center gap-3 text-[13px] font-medium leading-tight [color:var(--foreground)] md:flex md:text-[14px]">
                 <span className="h-4 w-px bg-[var(--brand-gold)]" aria-hidden="true" />
-                <span className="text-[15px] font-semibold">Galerie sinds 2005</span>
+                <span className="text-[15px] font-semibold">Tip: neem foto&apos;s van uw interieur mee!</span>
                 <span className="h-4 w-px bg-[var(--brand-gold)]" aria-hidden="true" />
-                <span>KVK 08148870</span>
+                <span>Geerdinksweg 2 Hengelo</span>
                 <span className="h-4 w-px bg-[var(--brand-gold)]" aria-hidden="true" />
-                <span>Ma t/m vr 12:00-16:00 telefonisch bereikbaar</span>
+                <span>info@dekunstvankunst.nl</span>
               </div>
             </div>
             <a
-              href="https://review-dekunstvankunstnl.vercel.app"
+              href="https://review-dekunstvankunst.nl"
               target="_blank"
               rel="noopener noreferrer"
               className="hidden text-[14px] font-medium underline decoration-[color:var(--brand-gold)] decoration-1 underline-offset-3 hover:opacity-85 md:inline-flex"
             >
-              1.683 bezoekersbeoordelingen
+              4,5/5 uit 1700+ reviews
             </a>
           </div>
         </div>
@@ -320,13 +335,19 @@ export default function App() {
                 Home
               </button>
               <button onClick={() => navigateTo('about-gallery')} className="btn-secondary min-h-0 justify-start px-4 py-3 text-sm">
-                Over de galerie
+                Impressie
+              </button>
+              <button onClick={() => navigateTo('kunst-waardecheque')} className="btn-secondary min-h-0 justify-start px-4 py-3 text-sm">
+                Kunst-Waardecheque
+              </button>
+              <button onClick={() => navigateTo('wist-u-dat')} className="btn-secondary min-h-0 justify-start px-4 py-3 text-sm">
+                Wist u dat?
               </button>
               <button onClick={() => navigateTo('faq')} className="btn-secondary min-h-0 justify-start px-4 py-3 text-sm">
                 Veelgestelde vragen
               </button>
               <button onClick={() => navigateTo('painting-exchange')} className="btn-secondary min-h-0 justify-start px-4 py-3 text-sm">
-                Schilderij omruilen
+                Omruilgarantie
               </button>
               <button onClick={() => navigateTo('art-visualizer')} className="btn-secondary min-h-0 justify-start px-4 py-3 text-sm">
                 Kunst visualizer
@@ -334,8 +355,8 @@ export default function App() {
               <button onClick={() => navigateTo('contact')} className="btn-secondary min-h-0 justify-start px-4 py-3 text-sm">
                 Contact
               </button>
-              <button onClick={() => navigateTo('homepage')} className="btn-secondary min-h-0 justify-start px-4 py-3 text-sm">
-                Verifieer uw cheque
+              <button onClick={() => navigateTo('plan-uw-bezoek')} className="btn-primary min-h-0 justify-start px-4 py-3 text-sm">
+                Plan uw bezoek
               </button>
             </div>
           </div>
@@ -356,11 +377,11 @@ export default function App() {
             )}
             {currentScreen === 'about-gallery' && (
               <button
-                onClick={() => navigateTo('cheque-input')}
+                onClick={() => navigateTo('plan-uw-bezoek')}
                 className="btn-primary min-h-0 px-4 py-2 text-sm"
-                aria-label="Ga naar verificatie van uw cheque"
+                aria-label="Ga naar plan uw bezoek"
               >
-                Verifieer uw cheque
+                Plan uw bezoek
               </button>
             )}
             <button

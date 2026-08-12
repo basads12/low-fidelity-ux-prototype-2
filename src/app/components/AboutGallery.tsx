@@ -99,16 +99,12 @@ export function AboutGallery({ onNavigate }: AboutGalleryProps) {
           <div className="lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start">
             {/* Left: Text */}
             <div>
-              <h1 className="mb-6 font-semibold uppercase tracking-[0.08em]">
-                UW BEZOEK
-              </h1>
+              <h1 className="mb-6 font-semibold uppercase tracking-[0.08em]">IMPRESSIE</h1>
 
               <p className="mb-4 text-lg leading-relaxed text-foreground/80">
-                Galerie De Kunst van Kunst is een fysieke galerie in Hengelo. U komt op afspraak met uw Kunst-Waardecheque en kiest in de galerie zelf een origineel schilderij. Een adviseur is aanwezig om uw vragen te beantwoorden.
-              </p>
-              <p className="mb-8 mt-4 text-lg leading-relaxed text-foreground/80">
-                <strong>Tip: neem foto's van uw interieur mee.</strong><br />
-                Onze adviseurs kunnen u dan beter begeleiden.
+                Hieronder ziet u een selectie van schilderijen uit onze galerie, in verschillende stijlen en formaten.
+                De getoonde werken geven een indruk; ze zijn niet te reserveren en niet gegarandeerd aanwezig. Welke
+                werken op dit moment volledig binnen uw cheque vallen, ziet u tijdens uw bezoek.
               </p>
 
             </div>
@@ -328,7 +324,7 @@ export function AboutGallery({ onNavigate }: AboutGalleryProps) {
         </section>
 
         <section className="mb-16">
-          <h2 className="mb-6 text-4xl font-semibold [color:var(--brand-bordeaux)]">Uw keuze in de galerie</h2>
+          <h2 className="mb-6 text-4xl font-semibold [color:var(--brand-bordeaux)]">Uw cheque in onze galerie</h2>
           <div className="grid gap-4 md:grid-cols-2 md:gap-5">
             <div className="border-l-4 border-l-[var(--brand-bordeaux)] bg-white p-6">
               <h3 className="mb-3 text-2xl font-semibold">Werken binnen uw cheque</h3>
@@ -350,7 +346,7 @@ export function AboutGallery({ onNavigate }: AboutGalleryProps) {
             onClick={() => onNavigate('cheque-input')}
             className="btn-primary min-h-[56px] px-8 text-base sm:text-lg"
           >
-            Verifieer uw cheque
+            Plan uw bezoek
           </button>
         </div>
         <footer className="mt-8 border-t border-[color:rgba(90,84,74,0.18)] pt-6">

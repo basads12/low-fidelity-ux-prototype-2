@@ -13,26 +13,26 @@ type Step = {
 
 const steps: Step[] = [
   {
-    title: 'Verifieer uw cheque',
+    title: 'U heeft een Kunst-Waardecheque ontvangen',
     description:
-      'Gebruik de QR-code op uw cheque of gebruik deze website om uw cheque te laten herkennen. Uw Kunst-Waardecheque wordt herkend voordat u een bezoekmoment kiest.',
+      'U heeft een Kunst-Waardecheque ontvangen van een bedrijf waar u klant bent.',
     image: howItWorksStep1Cheque,
-    imageAlt: 'Chequenummer invoer',
+    imageAlt: 'Kunst-Waardecheque',
     showArrow: true
   },
   {
-    title: 'Kies een bezoekmoment',
+    title: 'U plant uw bezoek',
     description:
-      'U kiest zelf een dag en tijd voor uw bezoek aan Galerie De Kunst van Kunst in Hengelo. Na het plannen ontvangt u een bevestiging met de praktische informatie.',
+      'U plant uw bezoek en kiest een moment dat u past.',
     image: howItWorksStep2Planner,
     imageAlt: 'Planner met gekozen dag'
   },
   {
-    title: 'Persoonlijk ontvangen',
+    title: 'U kiest uw schilderij in de galerie',
     description:
-      'Bij binnenkomst wordt u verwelkomd met een kopje koffie of thee. Daarna kijkt u op uw eigen tempo rond. Bij vragen is er altijd een adviseur aanwezig.',
+      'In de galerie kiest u uw schilderij en neemt het direct mee naar huis, met certificaat van echtheid.',
     image: howItWorksStep3Koffie,
-    imageAlt: 'Kop koffie tijdens ontvangst',
+    imageAlt: 'Bezoek aan de galerie',
     imageClassName: 'mx-auto h-auto w-full max-w-[280px] object-contain object-top sm:max-w-[340px] md:max-w-none md:origin-top md:-translate-y-3 md:scale-[1.08]'
   }
 ];

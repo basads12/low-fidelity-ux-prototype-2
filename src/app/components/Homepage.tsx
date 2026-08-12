@@ -143,24 +143,26 @@ export function Homepage({ onNavigate, updateData, onVerificationSuccess }: Home
           <div className="flex min-w-0 items-center gap-3 md:gap-4">
             <img src={logo} alt="De Kunst van Kunst" className="h-auto w-20 md:w-[124px]" />
             <div className="flex items-center text-[11px] leading-tight [color:var(--foreground)] sm:hidden">
-              <span className="text-[12px] font-semibold">Galerie sinds 2005</span>
+              <span className="text-[12px] font-semibold">Tip: neem foto&apos;s van uw interieur mee!</span>
             </div>
             <div className="hidden min-w-0 flex-wrap items-center gap-x-3 gap-y-1 text-[14px] font-medium leading-tight [color:var(--foreground)] md:flex lg:text-[15px]">
               <span className="h-4 w-px bg-[var(--brand-gold)]" aria-hidden="true" />
-              <span className="text-[15px] font-semibold lg:text-[16px]">Galerie sinds 2005</span>
+              <span className="text-[15px] font-semibold lg:text-[16px]">Tip: neem foto&apos;s van uw interieur mee!</span>
               <span className="h-4 w-px bg-[var(--brand-gold)]" aria-hidden="true" />
-              <span>KVK 08148870</span>
+              <span>Geerdinksweg 2 Hengelo</span>
               <span className="h-4 w-px bg-[var(--brand-gold)]" aria-hidden="true" />
-              <span className="hidden xl:inline">Ma t/m vr 12:00-16:00 telefonisch bereikbaar</span>
+              <span className="hidden xl:inline">info@dekunstvankunst.nl</span>
+              <span className="h-4 w-px bg-[var(--brand-gold)] hidden xl:inline" aria-hidden="true" />
+              <span className="hidden xl:inline">074 291 48 57</span>
             </div>
           </div>
           <a
-            href="https://review-dekunstvankunstnl.vercel.app"
+            href="https://review-dekunstvankunst.nl"
             target="_blank"
             rel="noopener noreferrer"
             className="hidden shrink-0 text-[15px] font-medium underline decoration-[color:var(--brand-gold)] decoration-1 underline-offset-3 hover:opacity-85 lg:inline-flex"
           >
-            1.683 bezoekersbeoordelingen
+            4,5/5 uit 1700+ reviews
           </a>
         </div>
       </div>
@@ -205,7 +207,7 @@ export function Homepage({ onNavigate, updateData, onVerificationSuccess }: Home
                     className="btn-primary homepage-verify-btn w-full"
                     disabled={isChecking}
                   >
-                    {isChecking ? 'We controleren uw cheque.' : 'Verifieer uw cheque'}
+                    {isChecking ? 'We controleren uw cheque.' : 'Plan uw bezoek'}
                   </button>
                   <button
                     type="button"
@@ -257,7 +259,7 @@ export function Homepage({ onNavigate, updateData, onVerificationSuccess }: Home
                   onClick={() => onNavigate('cheque-input')}
                   className="btn-primary homepage-verify-btn w-full"
                 >
-                  Verifieer uw cheque
+                  Plan uw bezoek
                 </button>
                 <button
                   type="button"
@@ -303,11 +305,11 @@ export function Homepage({ onNavigate, updateData, onVerificationSuccess }: Home
             <div className="max-w-3xl md:col-span-7">
               <header>
                 <p className="text-[22px] font-semibold uppercase tracking-[0.14em] [color:var(--brand-gold)] md:text-[28px]">
-                  OVER ONZE GALERIE
+                  DE GALERIE
                 </p>
               </header>
               <p className="mt-3 max-w-[66ch] text-[17px] leading-[1.7] [color:var(--brand-ink)] md:text-[20px]">
-                Galerie De Kunst van Kunst is sinds 2005 gevestigd in Hengelo. In de galerie hangen originele schilderijen van Nederlandse kunstenaars, in verschillende stijlen en formaten. Met een Kunst-Waardecheque kiest u zelf welk schilderij met u meegaat.
+                Galerie De Kunst van Kunst toont werk van kunstenaars uit het hele land, in verschillende stijlen en formaten. De kunstenaars die bij ons exposeren hebben veelal een eigen galerie of exposeren elders in het land. Ieder werk is origineel en handgeschilderd en gaat vergezeld van een certificaat van echtheid.
               </p>
               {/* Concept — besluit nodig: secundaire CTA homepage OB-40 */}
               <button
@@ -315,7 +317,7 @@ export function Homepage({ onNavigate, updateData, onVerificationSuccess }: Home
                 onClick={() => onNavigate('about-gallery')}
                 className="mt-6 inline-flex text-[16px] [color:var(--text-secondary)] underline underline-offset-4 hover:opacity-85 md:text-[18px]"
               >
-                Meer informatie →
+                Meer over de Kunst-Waardecheque
               </button>
             </div>
             <div className="md:col-span-4">
@@ -346,11 +348,11 @@ export function Homepage({ onNavigate, updateData, onVerificationSuccess }: Home
             <div className="grid gap-6 text-sm [color:var(--text-secondary)] md:grid-cols-3 md:gap-6">
               <div className="space-y-1">
                 <p className="mb-1 text-[16px] font-semibold [color:var(--foreground)]">Galerie De Kunst van Kunst</p>
-                <p>Geerdinksweg 2</p>
-                <p>7555 DM Hengelo (OV)</p>
+                <p>Geerdinksweg 2, Hengelo (Ov)</p>
+                <p>Uitsluitend op afspraak geopend</p>
               </div>
               <div className="space-y-1 md:border-l md:border-r md:border-[color:var(--brand-gold)] md:px-6 md:py-1">
-                <p className="mb-1 text-[16px] font-semibold [color:var(--foreground)]">Heeft u vragen?</p>
+                <p className="mb-1 text-[16px] font-semibold [color:var(--foreground)]">Contact</p>
                 <p>info@dekunstvankunst.nl</p>
                 <p>074-2914857</p>
                 <button onClick={() => onNavigate('faq')} className="block underline underline-offset-4 hover:opacity-80">
@@ -358,18 +360,10 @@ export function Homepage({ onNavigate, updateData, onVerificationSuccess }: Home
                 </button>
               </div>
               <div className="space-y-1">
-                <p className="mb-1 text-[16px] font-semibold [color:var(--foreground)]">Gratis Parkeren bij de Galerie</p>
-                <p>
-                  Of altijd plek bij Agathaplein circa 1 minuut lopen{' '}
-                  <a
-                    href="https://www.google.com/maps/search/?api=1&query=Agathaplein+Hengelo"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-semibold underline underline-offset-4 hover:opacity-85"
-                  >
-                    Route Agathaplein
-                  </a>
-                </p>
+                <p className="mb-1 text-[16px] font-semibold [color:var(--foreground)]">Praktisch</p>
+                <p>Maximaal twee bezoekers per cheque, toegang vanaf 12 jaar</p>
+                <p>Een bezoek duurt gemiddeld 60 tot 90 minuten</p>
+                <p>Parkeren zonder kosten voor de deur</p>
               </div>
             </div>
           </div>
