@@ -6,3 +6,7 @@ dist
 src/imports/galerie-hengelo-master.mp4
 
 /src/generated/prisma
+
+# Ralph loop iteration logs
+ralph/logs/
+ralph/STOP
