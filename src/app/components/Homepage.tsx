@@ -4,13 +4,17 @@ import { FromChequeToVisitSection } from './FromChequeToVisitSection';
 import logo from '../../imports/logo_no_sinds.png';
 import heroMobileImage from '../../imports/hero-mobile.png';
 import heroDesktopImage from '../../imports/hero-desktop.png';
-import galerieHengeloVideo from '../../imports/galerie-hengelo-master.mp4';
 import galerieHengeloPoster from '../../imports/galerie-hengelo-web-poster.jpg';
 import jcfBusinessFriend from '../../imports/jcf-business-friend-cutout.png';
 import headerAfspraakKunstwerk from '../../imports/header-afspraak-kunstwerk-96.webp';
 import { KunstwisselFiguur } from './KunstwisselFiguur';
 import voorwaardenPdf from '../../imports/Algemene_Voorwaarden_Galerie_De_Kunst_van_Kunst.pdf';
 import privacyPdf from '../../imports/Privacyverklaring_Galerie_De_Kunst_van_Kunst_2026-04-26.pdf';
+
+// The gallery video is a large binary kept out of git. It lives in public/ so the
+// bundler never has to resolve it — the build succeeds whether or not the file is
+// present, and the <video> falls back to its poster when it is missing.
+const GALERIE_HENGELO_VIDEO_SRC = '/media/galerie-hengelo-master.mp4';
 
 interface HomepageProps {
   onNavigate: (screen: Screen) => void;
@@ -288,7 +292,7 @@ export function Homepage({ onNavigate, updateData, onVerificationSuccess }: Home
                   poster={galerieHengeloPoster}
                   aria-label="Galerie De Kunst van Kunst in Hengelo"
                 >
-                  <source src={galerieHengeloVideo} type="video/mp4" />
+                  <source src={GALERIE_HENGELO_VIDEO_SRC} type="video/mp4" />
                   Uw browser ondersteunt deze video niet.
                 </video>
               </div>
