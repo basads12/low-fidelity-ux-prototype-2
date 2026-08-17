@@ -25,7 +25,7 @@ const FRAMES = [
   kw11, kw12, kw13, kw14, kw15, kw16, kw17, kw18, kw19,
 ];
 
-// Tijd dat één kunstwerk in beeld blijft, inclusief de overvloei van 900ms (zie kunstwissel.css).
+// Tijd dat één kunstwerk in beeld blijft, inclusief de overvloei van 500ms (zie kunstwissel.css).
 const WISSEL_MS = 3200;
 // Na dit aantal volledige rondes stopt de wissel vanzelf (rust + batterij).
 const MAX_RONDES = 2;

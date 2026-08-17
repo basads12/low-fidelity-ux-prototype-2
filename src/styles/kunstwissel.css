@@ -16,7 +16,7 @@
 }
 
 .kunstwissel-fade {
-  animation: kunstwissel-fade-in 900ms ease both;
+  animation: kunstwissel-fade-in 500ms ease both;
 }
 
 @keyframes kunstwissel-fade-in {
