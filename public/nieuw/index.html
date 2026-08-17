@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galerie De Kunst van Kunst | Hengelo, uitsluitend op afspraak</title>
+<meta name="description" content="Een middag voor u geregeld in onze galerie in Hengelo. Persoonlijke ontvangst, koffie, rust. U bepaalt zelf het tempo. Uitsluitend op afspraak, sinds 2005.">
+<style>
+  :root{
+    --creme:#F5F0E8;
+    --ink:#1A1A1A;
+    --bordeaux:#6E1E33;
+    --bordeaux-diep:#5A1829;
+    --oker:#C08A2D;
+    --wit:#FFFFFF;
+    --hairline:rgba(26,26,26,.18);
+    --hairline-licht:rgba(245,240,232,.22);
+    --maat:1160px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{
+    font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+    background:var(--creme);
+    color:var(--ink);
+    font-size:17px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--bordeaux);color:var(--creme)}
+  a{color:inherit}
+  .kader{max-width:var(--maat);margin:0 auto;padding:0 24px}
+  @media(min-width:900px){.kader{padding:0 48px}}
+
+  /* ---- typografische bouwstenen ---- */
+  .eyebrow{
+    font-size:.72rem;font-weight:600;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--oker);
+  }
+  .goudlijn{width:56px;height:2px;background:var(--oker);border:0}
+  h1,h2{font-weight:500;letter-spacing:-.02em;line-height:1.06}
+  .knop{
+    display:inline-block;background:var(--bordeaux);color:var(--creme);
+    font-size:1rem;font-weight:500;letter-spacing:.01em;
+    padding:.95em 1.9em;border:0;border-radius:0;cursor:pointer;
+    text-decoration:none;transition:background .15s ease;
+  }
+  .knop:hover{background:var(--bordeaux-diep)}
+  .knop:focus-visible{outline:2px solid var(--bordeaux);outline-offset:3px}
+  .tekstlink{
+    color:var(--ink);text-decoration:underline;
+    text-underline-offset:4px;text-decoration-thickness:1px;
+    font-size:1rem;
+  }
+  .tekstlink:hover{color:var(--bordeaux)}
+  .tekstlink:focus-visible{outline:2px solid var(--bordeaux);outline-offset:3px}
+
+  /* ---- header ---- */
+  header{border-bottom:1px solid var(--hairline)}
+  .kop{
+    display:flex;align-items:center;justify-content:space-between;
+    padding-top:22px;padding-bottom:22px;gap:24px;
+  }
+  .woordmerk{text-decoration:none;line-height:1.25}
+  .woordmerk strong{display:block;font-size:1.02rem;font-weight:600;letter-spacing:.01em}
+  .woordmerk span{display:block;font-size:.72rem;letter-spacing:.08em;color:rgba(26,26,26,.62)}
+  nav{display:flex;align-items:center;gap:32px}
+  nav .navlink{
+    font-size:.95rem;text-decoration:none;color:var(--ink);
+    border-bottom:1px solid transparent;padding-bottom:2px;
+  }
+  nav .navlink:hover{border-bottom-color:var(--ink)}
+  nav .knop{padding:.7em 1.4em;font-size:.92rem}
+  @media(max-width:759px){nav .navlink{display:none}}
+
+  /* ---- hero ---- */
+  .hero{padding:88px 0 104px}
+  @media(max-width:759px){.hero{padding:64px 0 72px}}
+  .hero .eyebrow{margin-bottom:26px}
+  .hero h1{
+    font-size:clamp(2.7rem,7.6vw,5.4rem);
+    color:var(--bordeaux);max-width:11ch;
+  }
+  .hero .goudlijn{margin:34px 0 30px}
+  .hero .sub{font-size:1.22rem;max-width:26em;color:rgba(26,26,26,.88)}
+  .hero .acties{display:flex;align-items:center;gap:28px;flex-wrap:wrap;margin-top:44px}
+
+  /* hero-figuur: gastvrouw met wisselende kunstwerken */
+  @media(min-width:900px){
+    .hero .kader{display:grid;grid-template-columns:minmax(0,1fr) clamp(300px,34vw,430px);gap:56px;align-items:end}
+  }
+  .kunstwissel{
+    position:relative;aspect-ratio:1600/1986;user-select:none;pointer-events:none;
+    filter:drop-shadow(0 20px 32px rgba(26,26,26,.16));opacity:0;
+  }
+  .kunstwissel.klaar{animation:op .8s ease .15s forwards}
+  .kunstwissel img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;-webkit-user-drag:none}
+  .kunstwissel img.fade{animation:kwfade .9s ease both}
+  @keyframes kwfade{from{opacity:0}to{opacity:1}}
+  @media(max-width:899px){.kunstwissel{max-width:300px;margin:56px auto 0}}
+  @media (prefers-reduced-motion:reduce){
+    .kunstwissel{opacity:1}
+    .kunstwissel.klaar,.kunstwissel img.fade{animation:none}
+  }
+
+  /* rustige laadvolgorde */
+  .verschijn{opacity:0;transform:translateY(10px);animation:op .55s ease forwards}
+  .v2{animation-delay:.09s}.v3{animation-delay:.18s}.v4{animation-delay:.27s}.v5{animation-delay:.36s}
+  @keyframes op{to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){.verschijn{opacity:1;transform:none;animation:none}}
+
+  /* ---- drie stappen ---- */
+  .stappen{border-top:1px solid var(--hairline);padding:88px 0 96px}
+  @media(max-width:759px){.stappen{padding:64px 0 72px}}
+  .stappen-grid{display:grid;gap:56px}
+  @media(min-width:900px){.stappen-grid{grid-template-columns:5fr 7fr;gap:72px}}
+  .stappen .eyebrow{margin-bottom:22px}
+  .stappen h2{font-size:clamp(1.9rem,3.6vw,2.7rem);max-width:14ch}
+  .stappen .sub{margin-top:18px;color:rgba(26,26,26,.75);max-width:24em}
+  .stappen .knop{margin-top:40px}
+  @media(max-width:899px){.stappen .knop{margin-top:8px}}
+  .staplijst{list-style:none}
+  .stap{
+    display:grid;grid-template-columns:64px 1fr;gap:20px;
+    padding:26px 0;border-top:1px solid var(--hairline);
+  }
+  .stap:last-child{border-bottom:1px solid var(--hairline)}
+  .stapnr{
+    font-size:.85rem;font-weight:600;letter-spacing:.14em;
+    color:var(--oker);padding-top:.35em;
+  }
+  .stap dt{font-weight:600;font-size:1.08rem;margin-bottom:6px}
+  .stap dd{color:rgba(26,26,26,.82);max-width:30em}
+
+  /* ---- over de galerie (donkere sectie) ---- */
+  .over{background:var(--ink);color:var(--creme);padding:104px 0 112px}
+  @media(max-width:759px){.over{padding:72px 0 80px}}
+  .over .eyebrow{margin-bottom:26px}
+  .over h2{font-size:clamp(2rem,4.4vw,3.2rem);color:var(--creme);max-width:16ch}
+  .over-grid{display:grid;gap:40px;margin-top:52px}
+  @media(min-width:900px){.over-grid{grid-template-columns:1fr 1fr;gap:88px}}
+  .over p{color:rgba(245,240,232,.88);max-width:30em}
+  .over p+p{margin-top:22px}
+  .over .groot{font-size:1.28rem;line-height:1.55;color:var(--creme)}
+  .feiten{list-style:none;margin-top:46px;border-top:1px solid var(--hairline-licht);max-width:30em}
+  .feiten li{
+    display:flex;justify-content:space-between;gap:24px;
+    padding:13px 0;border-bottom:1px solid var(--hairline-licht);
+    font-size:.95rem;
+  }
+  .feiten li span:first-child{color:rgba(245,240,232,.6)}
+
+  /* ---- activeren ---- */
+  .activeren{padding:96px 0 104px}
+  @media(max-width:759px){.activeren{padding:68px 0 76px}}
+  .activeren-grid{display:grid;gap:48px}
+  @media(min-width:900px){.activeren-grid{grid-template-columns:6fr 6fr;gap:88px;align-items:start}}
+  .activeren .eyebrow{margin-bottom:22px}
+  .activeren h2{font-size:clamp(1.9rem,3.6vw,2.7rem);color:var(--bordeaux)}
+  .activeren .toelichting{margin-top:20px;color:rgba(26,26,26,.82);max-width:26em}
+  .veld{margin-bottom:26px}
+  .veld label{display:block;font-size:.9rem;font-weight:600;margin-bottom:8px}
+  .veld input{
+    width:100%;max-width:26em;font:inherit;color:var(--ink);
+    background:var(--wit);border:1px solid rgba(26,26,26,.35);
+    border-radius:0;padding:.85em 1em;
+  }
+  .veld input:focus-visible{outline:2px solid var(--bordeaux);outline-offset:2px;border-color:var(--bordeaux)}
+  .veld .hint{font-size:.85rem;color:rgba(26,26,26,.6);margin-top:7px}
+  .fout{font-size:.92rem;color:var(--ink);margin-top:8px;display:none}
+  .fout.zichtbaar{display:block}
+  .fout::before{content:"";display:inline-block;width:22px;height:2px;background:var(--bordeaux);vertical-align:middle;margin-right:10px}
+  .privacyregel{font-size:.85rem;color:rgba(26,26,26,.6);margin-top:22px;max-width:26em}
+  .bevestiging{
+    display:none;margin-top:26px;border-top:1px solid var(--hairline);
+    padding-top:20px;max-width:26em;
+  }
+  .bevestiging.zichtbaar{display:block}
+  .bevestiging p{font-size:.98rem}
+
+  /* ---- footer ---- */
+  footer{border-top:1px solid var(--hairline);padding:56px 0 64px}
+  .voet-grid{display:grid;gap:36px}
+  @media(min-width:760px){.voet-grid{grid-template-columns:1fr 1fr 1fr}}
+  footer h3{font-size:.72rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--oker);margin-bottom:16px}
+  footer p,footer li{font-size:.92rem;color:rgba(26,26,26,.78)}
+  footer ul{list-style:none}
+  footer li+li{margin-top:8px}
+  footer a{text-decoration:none;border-bottom:1px solid var(--hairline);padding-bottom:1px}
+  footer a:hover{border-bottom-color:var(--ink)}
+  .voetregel{margin-top:48px;padding-top:22px;border-top:1px solid var(--hairline);font-size:.8rem;color:rgba(26,26,26,.55)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="kader kop">
+    <a class="woordmerk" href="#">
+      <strong>Galerie De Kunst van Kunst</strong>
+      <span>Hengelo, sinds 2005</span>
+    </a>
+    <nav aria-label="Hoofdnavigatie">
+      <a class="navlink" href="#bezoek">Uw bezoek</a>
+      <a class="navlink" href="#galerie">De galerie</a>
+      <a class="knop" href="#activeren">Activeer uw cheque</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="kader">
+      <div>
+        <p class="eyebrow verschijn">Galerie De Kunst van Kunst</p>
+        <h1 class="verschijn v2">Een middag voor u&nbsp;geregeld.</h1>
+        <hr class="goudlijn verschijn v3">
+        <p class="sub verschijn v4">In onze galerie in Hengelo, op een dag die u uitkomt.</p>
+        <div class="acties verschijn v5">
+          <a class="knop" href="#activeren">Activeer uw cheque</a>
+          <a class="tekstlink" href="#bezoek">Lees wat u kunt verwachten</a>
+        </div>
+      </div>
+      <div class="kunstwissel" id="kunstwissel" aria-hidden="true">
+        <img src="kunstwissel/kunstwissel-01.webp" alt="" draggable="false">
+      </div>
+    </div>
+  </section>
+
+  <section class="stappen" id="bezoek">
+    <div class="kader stappen-grid">
+      <div>
+        <p class="eyebrow">De weg naar uw middag</p>
+        <h2>In drie stappen bent u binnen.</h2>
+        <p class="sub">Eenvoudig, en u kunt op elk moment stoppen.</p>
+        <a class="knop" href="#activeren">Activeer uw cheque</a>
+      </div>
+      <dl class="staplijst">
+        <div class="stap">
+          <span class="stapnr" aria-hidden="true">01</span>
+          <div>
+            <dt>Activeren</dt>
+            <dd>U controleert uw cheque met twee velden: het chequenummer en uw postcode.</dd>
+          </div>
+        </div>
+        <div class="stap">
+          <span class="stapnr" aria-hidden="true">02</span>
+          <div>
+            <dt>Plannen</dt>
+            <dd>U kiest een dag en tijd die u schikt. Een middag duurt 45 tot 90 minuten.</dd>
+          </div>
+        </div>
+        <div class="stap">
+          <span class="stapnr" aria-hidden="true">03</span>
+          <div>
+            <dt>Komen</dt>
+            <dd>U wordt ontvangen, krijgt koffie of thee, en kijkt rustig rond.</dd>
+          </div>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="over" id="galerie">
+    <div class="kader">
+      <p class="eyebrow">Over ons</p>
+      <h2>Een galerie in Hengelo, sinds&nbsp;2005.</h2>
+      <div class="over-grid">
+        <div>
+          <p class="groot">Wij ontvangen bezoek uitsluitend op afspraak. Dat doen we al twintig jaar, op dezelfde plek in Hengelo.</p>
+        </div>
+        <div>
+          <p>Onze ruimte is ingericht zoals een goed huis: rustig, verzorgd, met tijd voor een gesprek. U krijgt de galerie voor u alleen, of nagenoeg.</p>
+          <p>Wat u bij ons vindt, is het werk van een kleine groep kunstenaars met wie wij langer samenwerken. Geen catalogus, geen haast. Een wand, een stoel, een gesprek.</p>
+          <ul class="feiten">
+            <li><span>Bezoek</span><span>Uitsluitend op afspraak</span></li>
+            <li><span>Adres</span><span>Geerdinksweg 2, Hengelo</span></li>
+            <li><span>Sinds</span><span>2005</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="activeren" id="activeren">
+    <div class="kader activeren-grid">
+      <div>
+        <p class="eyebrow">Uw cheque</p>
+        <h2>Activeer uw cheque.</h2>
+        <p class="toelichting">Het chequenummer staat op de voorzijde van uw Kunst-Waardecheque. Samen met uw postcode is dat alles wat wij vragen.</p>
+      </div>
+      <form novalidate>
+        <div class="veld">
+          <label for="chequenummer">Chequenummer</label>
+          <input id="chequenummer" name="chequenummer" type="text" inputmode="text" autocomplete="off" spellcheck="false" placeholder="DKK-2026-000000">
+          <p class="hint">Drie letters, een jaartal en zes cijfers.</p>
+          <p class="fout" id="fout-nummer" role="alert">Controleer het chequenummer. Het bestaat uit drie letters, een jaartal en zes cijfers.</p>
+        </div>
+        <div class="veld">
+          <label for="postcode">Postcode</label>
+          <input id="postcode" name="postcode" type="text" inputmode="text" autocomplete="postal-code" placeholder="1234 AB">
+          <p class="fout" id="fout-postcode" role="alert">Controleer de postcode. Vier cijfers en twee letters.</p>
+        </div>
+        <button class="knop" type="submit">Activeer uw cheque</button>
+        <p class="privacyregel">Uw gegevens worden uitsluitend gebruikt om uw cheque te controleren.</p>
+        <div class="bevestiging" id="bevestiging">
+          <p>Dit is een ontwerpvoorbeeld. In de definitieve site opent hier uw persoonlijke welkomstscherm.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="kader">
+    <div class="voet-grid">
+      <div>
+        <h3>Galerie</h3>
+        <p>Galerie De Kunst van Kunst<br>Geerdinksweg 2<br>7555 DM Hengelo</p>
+      </div>
+      <div>
+        <h3>Bezoek</h3>
+        <p>Uitsluitend op afspraak.<br>Een middag duurt 45 tot 90 minuten.</p>
+      </div>
+      <div>
+        <h3>Meer</h3>
+        <ul>
+          <li><a href="#bezoek">Uw bezoek</a></li>
+          <li><a href="#">Voorwaarden</a></li>
+          <li><a href="#">Privacy</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="voetregel">Galerie De Kunst van Kunst, Hengelo. KvK 08148870. Sinds 2005.</p>
+  </div>
+</footer>
+
+<script>
+  var form = document.querySelector('form');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var nr = document.getElementById('chequenummer');
+    var pc = document.getElementById('postcode');
+    var foutNr = document.getElementById('fout-nummer');
+    var foutPc = document.getElementById('fout-postcode');
+    var ok = true;
+
+    if(!/^DKK-\d{4}-\d{6}$/i.test(nr.value.trim())){
+      foutNr.classList.add('zichtbaar'); ok = false;
+    } else { foutNr.classList.remove('zichtbaar'); }
+
+    if(!/^\d{4}\s?[A-Za-z]{2}$/.test(pc.value.trim())){
+      foutPc.classList.add('zichtbaar'); ok = false;
+    } else { foutPc.classList.remove('zichtbaar'); }
+
+    document.getElementById('bevestiging').classList.toggle('zichtbaar', ok);
+  });
+</script>
+
+<script>
+  /* Kunstwissel: crossfade tussen 19 kunstwerken; pauzeert buiten beeld,
+     stopt na 2 rondes en staat stil bij prefers-reduced-motion. */
+  (function(){
+    var host = document.getElementById('kunstwissel');
+    if(!host) return;
+    var frames = [];
+    for(var i = 1; i <= 19; i++){ frames.push('kunstwissel/kunstwissel-' + (i < 10 ? '0' + i : i) + '.webp'); }
+
+    var eerste = host.querySelector('img');
+    var toonEntree = function(){ host.classList.add('klaar'); };
+    if(eerste.complete && eerste.naturalWidth){ toonEntree(); }
+    else { eerste.addEventListener('load', toonEntree); }
+
+    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    var ok = frames.map(function(_, i){ return i === 0; });
+    var actueel = 0, wissels = 0, MAX = 2 * frames.length, zichtbaar = true;
+
+    if('IntersectionObserver' in window){
+      new IntersectionObserver(function(en){ zichtbaar = en[0].isIntersecting; }, { threshold: .1 }).observe(host);
+    }
+
+    function laad(i, poging){
+      if(i >= frames.length) return;
+      var im = new Image();
+      im.onload = function(){ ok[i] = true; laad(i + 1, 0); };
+      im.onerror = function(){
+        if(poging < 2){ setTimeout(function(){ laad(i, poging + 1); }, 2000); }
+        else { laad(i + 1, 0); }
+      };
+      im.src = frames[i];
+    }
+    function startLaden(){ setTimeout(function(){ laad(1, 0); }, 800); }
+    if(document.readyState === 'complete'){ startLaden(); }
+    else { window.addEventListener('load', startLaden, { once: true }); }
+
+    var timer = setInterval(function(){
+      if(!zichtbaar || document.hidden) return;
+      if(wissels >= MAX){ clearInterval(timer); return; }
+      var volgende = -1;
+      for(var s = 1; s <= frames.length; s++){
+        var k = (actueel + s) % frames.length;
+        if(ok[k]){ volgende = k; break; }
+      }
+      if(volgende < 0 || volgende === actueel) return;
+      var lagen = host.querySelectorAll('img');
+      if(lagen.length > 1){ host.removeChild(lagen[0]); }
+      var nieuw = document.createElement('img');
+      nieuw.src = frames[volgende];
+      nieuw.alt = '';
+      nieuw.draggable = false;
+      nieuw.className = 'fade';
+      host.appendChild(nieuw);
+      actueel = volgende;
+      wissels++;
+    }, 3000);
+  })();
+</script>
+
+</body>
+</html>
