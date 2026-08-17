@@ -1,15 +1,14 @@
 {
   "rewrites": [
-    { "source": "/", "destination": "/nieuw/index.html" },
-    { "source": "/oud", "destination": "/index.html" },
-    { "source": "/kunst-visualizer", "destination": "/index.html" },
-    { "source": "/kunst-waardecheque", "destination": "/index.html" },
-    { "source": "/over-de-galerie", "destination": "/index.html" },
-    { "source": "/wist-u-dat", "destination": "/index.html" },
-    { "source": "/plan-uw-bezoek", "destination": "/index.html" },
-    { "source": "/veelgestelde-vragen", "destination": "/index.html" },
-    { "source": "/contact", "destination": "/index.html" },
-    { "source": "/reviews", "destination": "/index.html" },
-    { "source": "/schilderij-omruilen", "destination": "/index.html" }
+    { "source": "/oud", "destination": "/app.html" },
+    { "source": "/kunst-visualizer", "destination": "/app.html" },
+    { "source": "/kunst-waardecheque", "destination": "/app.html" },
+    { "source": "/over-de-galerie", "destination": "/app.html" },
+    { "source": "/wist-u-dat", "destination": "/app.html" },
+    { "source": "/plan-uw-bezoek", "destination": "/app.html" },
+    { "source": "/veelgestelde-vragen", "destination": "/app.html" },
+    { "source": "/contact", "destination": "/app.html" },
+    { "source": "/reviews", "destination": "/app.html" },
+    { "source": "/schilderij-omruilen", "destination": "/app.html" }
   ]
 }
