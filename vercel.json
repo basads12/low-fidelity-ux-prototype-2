@@ -1,5 +1,7 @@
 {
   "rewrites": [
+    { "source": "/", "destination": "/nieuw/index.html" },
+    { "source": "/oud", "destination": "/index.html" },
     { "source": "/kunst-visualizer", "destination": "/index.html" },
     { "source": "/kunst-waardecheque", "destination": "/index.html" },
     { "source": "/over-de-galerie", "destination": "/index.html" },

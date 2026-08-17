@@ -223,7 +223,7 @@
         </div>
       </div>
       <div class="kunstwissel" id="kunstwissel" aria-hidden="true">
-        <img src="kunstwissel/kunstwissel-01.webp" alt="" draggable="false">
+        <img src="/nieuw/kunstwissel/kunstwissel-01.webp" alt="" draggable="false">
       </div>
     </div>
   </section>
@@ -366,7 +366,7 @@
     var host = document.getElementById('kunstwissel');
     if(!host) return;
     var frames = [];
-    for(var i = 1; i <= 19; i++){ frames.push('kunstwissel/kunstwissel-' + (i < 10 ? '0' + i : i) + '.webp'); }
+    for(var i = 1; i <= 19; i++){ frames.push('/nieuw/kunstwissel/kunstwissel-' + (i < 10 ? '0' + i : i) + '.webp'); }
 
     var eerste = host.querySelector('img');
     var toonEntree = function(){ host.classList.add('klaar'); };
