@@ -5,4 +5,10 @@ node_modules
 dist
 src/imports/galerie-hengelo-master.mp4
 
-/src/generated/prisma
+# Large media served from public/ — see "Large media" in README.md
+public/media/*
+!public/media/.gitkeep
+
+# Ralph loop iteration logs
+ralph/logs/
+ralph/STOP
